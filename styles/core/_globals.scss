@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+  font-size: calc(100vw / 1440 * 10);
+  overscroll-behavior: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  // scroll-behavior: smooth;
+
+  @include media("<=tablet") {
+    font-size: calc(100vw / 768 * 10);
+  }
+
+  @include media("<=phone") {
+    font-size: calc(100vw / 425 * 10);
+  }
+
+  @include media("<=375px") {
+    font-size: calc(100vw / 375 * 10);
+  }
+
+  &.no-cursor {
+    cursor: none;
+
+    * {
+      cursor: none;
+      pointer-events: none;
+    }
+  }
+}
+
+// resets
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: calc(-0.025 * 16px);
+  color: $black;
+  height: 100dvh; /* ✅ Do this! */
+
+  &.no-scroll {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
