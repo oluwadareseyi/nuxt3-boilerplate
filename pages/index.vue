@@ -1,13 +1,22 @@
 <template>
   <h1>Welcome to home</h1>
+  <p>Global Count: {{ store.count }}</p>
+  <p>Local Count: {{ localCount }}</p>
   <ButtonComponent :loading="false" button-type="primary" @click="click">
-    Hello
+    Increment
   </ButtonComponent>
 </template>
 
 <script lang="ts" setup>
+import { useGlobalStore } from "~/stores";
+
+const localCount = ref(0);
+
+const store = useGlobalStore();
+
 const click = () => {
-  console.log("clicked");
+  store.increment();
+  localCount.value++;
 };
 </script>
 

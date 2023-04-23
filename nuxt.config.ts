@@ -53,4 +53,5 @@ export default defineNuxtConfig({
   },
   components: ["~/components/globals", "~/components"],
   css: ["@/styles/index.scss"],
+  modules: ["@pinia/nuxt"],
 });

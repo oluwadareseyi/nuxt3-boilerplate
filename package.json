@@ -9,9 +9,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@pinia/nuxt": "^0.4.9",
     "@types/node": "^18",
     "nuxt": "^3.4.1",
+    "pinia": "^2.0.35",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2"
-  }
+  },
+  "dependencies": {}
 }
