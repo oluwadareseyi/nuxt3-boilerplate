@@ -1,6 +1,7 @@
 <template>
   <h1>Welcome to home</h1>
   <p>Global Count: {{ store.count }}</p>
+  <p>Global Double Count: {{ store.doubleCount }}</p>
   <p>Local Count: {{ localCount }}</p>
   <ButtonComponent :loading="false" button-type="primary" @click="click">
     Increment
