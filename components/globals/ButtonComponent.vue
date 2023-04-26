@@ -1,25 +1,3 @@
-<template>
-  <component
-    :is="href ? 'nuxt-link' : 'button'"
-    :href="href"
-    :to="href && href.startsWith('/') ? href : ''"
-    :class="classNames"
-    @click="click"
-    :target="href && !href.startsWith('/') && '_blank'"
-    :disabled="loading || disabled"
-  >
-    <span v-if="icon && reversed" class="c-button__icon">
-      <component :is="icon" />
-    </span>
-    <span v-if="buttonType !== 'icon'" class="c-button__text" data-button-text>
-      <slot />
-    </span>
-    <span v-if="icon && !reversed" class="c-button__icon">
-      <component :is="icon" />
-    </span>
-  </component>
-</template>
-
 <script lang="ts" setup>
 type ButtonType = "primary" | "secondary" | "icon";
 type ButtonColor = "solid" | "outline" | "white";
@@ -81,3 +59,25 @@ const click = () => {
   emit("click");
 };
 </script>
+
+<template>
+  <component
+    :is="href ? 'nuxt-link' : 'button'"
+    :href="href"
+    :to="href && href.startsWith('/') ? href : ''"
+    :class="classNames"
+    @click="click"
+    :target="href && !href.startsWith('/') && '_blank'"
+    :disabled="loading || disabled"
+  >
+    <span v-if="icon && reversed" class="c-button__icon">
+      <component :is="icon" />
+    </span>
+    <span v-if="buttonType !== 'icon'" class="c-button__text" data-button-text>
+      <slot />
+    </span>
+    <span v-if="icon && !reversed" class="c-button__icon">
+      <component :is="icon" />
+    </span>
+  </component>
+</template>
