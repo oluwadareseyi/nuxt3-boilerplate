@@ -5,8 +5,19 @@ $orange: rgba(255, 95, 24, 1);
 // easings
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-$font-sans: "Switzer", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
-  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Segoe UI, sans-serif;
+$font-sans:
+    "Switzer",
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    Segoe UI,
+    sans-serif;
 
 // border
 $border-dark: 1px solid $black;
@@ -17,17 +28,4 @@ $border-current: 1px solid currentColor;
 
 // shadow
 
-$z-indexes: (
-  "cursor",
-  "toast",
-  "page-transition",
-  "preloader",
-  "overlay",
-  "modal",
-  "menu",
-  "nav",
-  "4",
-  "3",
-  "2",
-  "1"
-);
+$z-indexes: ("cursor", "toast", "page-transition", "preloader", "overlay", "modal", "menu", "nav", "4", "3", "2", "1");

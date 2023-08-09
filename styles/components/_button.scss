@@ -1,120 +1,122 @@
 .c-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 48px;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &--outline {
-    border: $border-current;
-    line-height: 1;
-  }
-
-  &--solid {
-    background: $black;
-    color: $white;
-  }
-
-  &--white {
-    background: $white;
-    color: $black;
-  }
-
-  &--medium {
-    padding: 16px 24px;
-  }
-
-  &--secondary {
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-  }
-
-  &--icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
-    border-radius: 50%;
-    padding: 0;
+    justify-content: center;
+    border-radius: 48px;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 
-    .c-button__icon {
-      margin-left: 0;
-    }
-  }
-
-  &--small {
-    padding: 4px 8px;
-
-    .c-button__icon {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  &--withicon {
-    justify-content: space-between;
-    &.c-button--medium {
-      padding: 16px;
-
-      &:not(.c-button--reversed) {
-        padding-left: 24px;
-      }
-
-      &.c-button--reversed {
-        padding-right: 24px;
-      }
+    &--outline {
+        border: $border-current;
+        line-height: 1;
     }
 
-    &.c-button--small {
-      padding: 4px;
-
-      &:not(.c-button--reversed) {
-        padding-left: 8px;
-      }
-
-      &.c-button--reversed {
-        padding-right: 8px;
-      }
-    }
-
-    &.c-button--secondary {
-      padding: 0;
-    }
-  }
-
-  &__icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 2px;
-    display: flex;
-  }
-
-  &:not(&.text-button) {
-    &:disabled,
-    &.c-button--disabled {
-      opacity: 0.25;
-      pointer-events: none;
-      border: 0;
-    }
-  }
-
-  &.text-button {
-    &:disabled,
-    &.c-button--disabled {
-      opacity: 0.25;
-      pointer-events: none;
-    }
-  }
-
-  @include cursor {
-    &:not(.c-button--secondary) {
-      &:hover {
-        background: $orange;
+    &--solid {
+        background: $black;
         color: $white;
-        border-color: $orange;
-      }
     }
-  }
+
+    &--white {
+        background: $white;
+        color: $black;
+    }
+
+    &--medium {
+        padding: 16px 24px;
+    }
+
+    &--secondary {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    &--icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: 0;
+
+        .c-button__icon {
+            margin-left: 0;
+        }
+    }
+
+    &--small {
+        padding: 4px 8px;
+
+        .c-button__icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &--withicon {
+        justify-content: space-between;
+        &.c-button--medium {
+            padding: 16px;
+
+            &:not(.c-button--reversed) {
+                padding-left: 24px;
+            }
+
+            &.c-button--reversed {
+                padding-right: 24px;
+            }
+        }
+
+        &.c-button--small {
+            padding: 4px;
+
+            &:not(.c-button--reversed) {
+                padding-left: 8px;
+            }
+
+            &.c-button--reversed {
+                padding-right: 8px;
+            }
+        }
+
+        &.c-button--secondary {
+            padding: 0;
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        margin-left: 2px;
+        display: flex;
+    }
+
+    &:not(&.text-button) {
+        &:disabled,
+        &.c-button--disabled {
+            opacity: 0.25;
+            pointer-events: none;
+            border: 0;
+        }
+    }
+
+    &.text-button {
+        &:disabled,
+        &.c-button--disabled {
+            opacity: 0.25;
+            pointer-events: none;
+        }
+    }
+
+    @include cursor {
+        &:not(.c-button--secondary) {
+            &:hover {
+                background: $orange;
+                color: $white;
+                border-color: $orange;
+            }
+        }
+    }
 }

@@ -1,53 +1,53 @@
 import AutoBind from "../utils/bind";
 
 export default class {
-  constructor({ element, elements }) {
-    AutoBind(this);
+    constructor({ element, elements }) {
+        AutoBind(this);
 
-    const { animationDelay, animationTarget } = element.dataset;
+        const { animationDelay, animationTarget } = element.dataset;
 
-    this.delay = animationDelay;
+        this.delay = animationDelay;
 
-    this.element = element;
-    this.elements = elements;
+        this.element = element;
+        this.elements = elements;
 
-    this.target = animationTarget ? element.closest(animationTarget) : element;
+        this.target = animationTarget ? element.closest(animationTarget) : element;
 
-    this.isVisible = false;
-    this.hasAnimatedIn = false;
+        this.isVisible = false;
+        this.hasAnimatedIn = false;
 
-    if ("IntersectionObserver" in window) {
-      this.createObserver();
+        if ("IntersectionObserver" in window) {
+            this.createObserver();
 
-      this.animateOut();
-    } else {
-      this.animateIn();
-    }
-  }
-
-  createObserver() {
-    this.observer = new window.IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!this.isVisible && entry.isIntersecting) {
-          if (this.delay) {
-            setTimeout(() => {
-              this.animateIn();
-            }, this.delay);
-          } else {
-            this.animateIn();
-          }
+            this.animateOut();
         } else {
-          this.animateOut();
+            this.animateIn();
         }
-      });
-    }).observe(this.target);
-  }
+    }
 
-  animateIn() {
-    this.isVisible = true;
-  }
+    createObserver() {
+        this.observer = new window.IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!this.isVisible && entry.isIntersecting) {
+                    if (this.delay) {
+                        setTimeout(() => {
+                            this.animateIn();
+                        }, this.delay);
+                    } else {
+                        this.animateIn();
+                    }
+                } else {
+                    this.animateOut();
+                }
+            });
+        }).observe(this.target);
+    }
 
-  animateOut() {
-    // this.isVisible = false;
-  }
+    animateIn() {
+        this.isVisible = true;
+    }
+
+    animateOut() {
+        // this.isVisible = false;
+    }
 }
