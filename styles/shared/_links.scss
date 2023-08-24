@@ -6,16 +6,14 @@
 }
 
 %link__line {
-    @media (any-pointer: fine) {
-        background: currentColor;
-        bottom: 0;
-        content: "";
-        height: 1px;
-        left: 0;
-        position: absolute;
-        transition: transform 0.7s $ease-out-expo;
-        width: 100%;
-    }
+    background: currentColor;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: transform 0.7s $ease-out-expo;
+    width: 100%;
 }
 
 %link__line--visible {
@@ -38,9 +36,12 @@
         @extend %link__line--visible;
     }
 
-    &:hover {
-        &:after {
-            @extend %link__line--hidden;
+    @include cursor {
+        &:hover {
+            &:after {
+                transform: scaleX(0);
+                transform-origin: right center;
+            }
         }
     }
 }
@@ -55,9 +56,12 @@
         @extend %link__line--hidden;
     }
 
-    &:hover {
-        &:after {
-            @extend %link__line--visible;
+    @include cursor {
+        &:hover {
+            &:after {
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
         }
     }
 }
