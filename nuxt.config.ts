@@ -18,7 +18,7 @@ export default defineNuxtConfig({
                 {
                     property: "og:image",
                     hid: "og:image",
-                    content: "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1589918334/Pith%20Africa/Pith-logo_bvt8vx.png",
+                    content: "",
                 },
                 {
                     property: "twitter:card",
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
                 {
                     property: "twitter:image",
                     hid: "twitter:image",
-                    content: "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1589918334/Pith%20Africa/Pith-logo_bvt8vx.png",
+                    content: "",
                 },
             ],
             link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
