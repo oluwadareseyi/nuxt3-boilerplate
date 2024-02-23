@@ -20,7 +20,7 @@
         "eslint": "^8.46.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",
-        "nuxt": "^3.8.0",
+        "nuxt": "^3.10.3",
         "nuxt-gtag": "^0.5.7",
         "pinia": "^2.0.35",
         "prettier": "^3.0.1",
